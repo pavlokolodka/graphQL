@@ -4,10 +4,12 @@ const { buildSchema, GraphQLObjectType, GraphQLSchema } = require("graphql")
 const PORT = 4000;
 const app = express()
 const productQuery = require('./schema/product.query')
+const productMutation = require('./schema/product.mutation')
 
 
 const schema = new GraphQLSchema({
     query: productQuery,
+    mutation: productMutation,
 })
 
 app.use(
