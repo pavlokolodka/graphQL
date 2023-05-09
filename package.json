@@ -4,14 +4,16 @@
   "description": "Test API for GraphQL",
   "main": "index.js",
   "scripts": {
-    "express-graphql": "nodemon ./express-graphql/index.js"
+    "express-graphql": "nodemon ./express-graphql/index.js",
+    "apollo-server": "nodemon ./apollo-server/index.js"
   },
   "author": "Pavlo Kolodka",
   "license": "ISC",
   "dependencies": {
+    "@apollo/server": "^4.7.1",
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
-    "graphql": "^15.8.0"
+    "graphql": "^16.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

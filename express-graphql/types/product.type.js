@@ -13,7 +13,7 @@ const productType = new GraphQLObjectType({
         brand: { type: GraphQLString },
         category: { type: GraphQLString },
         thumbnail: { type: GraphQLString },
-        images: { type: GraphQLList(GraphQLString) },
+        images: { type: new GraphQLList(GraphQLString) },
     }
 })
 

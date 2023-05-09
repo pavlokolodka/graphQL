@@ -11,16 +11,16 @@ const productMutation = new GraphQLObjectType({
         createProduct: {
             type: productType,
             args: {
-                title: { type: GraphQLNonNull(GraphQLString) },
-                description: { type: GraphQLNonNull(GraphQLString) },
-                price: { type: GraphQLNonNull(GraphQLInt) },
+                title: { type: new GraphQLNonNull(GraphQLString) },
+                description: { type: new GraphQLNonNull(GraphQLString) },
+                price: { type: new GraphQLNonNull(GraphQLInt) },
                 discountPercentage: { type: GraphQLFloat },
                 rating: { type: GraphQLFloat },
                 stock: { type: GraphQLInt },
                 brand: { type: GraphQLString },
                 category: { type: GraphQLString },
                 thumbnail: { type: GraphQLString },
-                images: { type: GraphQLList(GraphQLString) },
+                images: { type: new GraphQLList(GraphQLString) },
             },
             resolve(source, args) {
                 const newProduct = {id: productsData.length + 1, ...args};
@@ -33,17 +33,17 @@ const productMutation = new GraphQLObjectType({
         updateProduct: {
             type: productType,
             args: {
-              id: { type: GraphQLNonNull(GraphQLInt) },
-              title: { type: GraphQLNonNull(GraphQLString) },
-              description: { type: GraphQLNonNull(GraphQLString) },
-              price: { type: GraphQLNonNull(GraphQLInt) },
+              id: { type: new GraphQLNonNull(GraphQLInt) },
+              title: { type: new GraphQLNonNull(GraphQLString) },
+              description: { type: new GraphQLNonNull(GraphQLString) },
+              price: { type: new GraphQLNonNull(GraphQLInt) },
               discountPercentage: { type: GraphQLFloat },
               rating: { type: GraphQLFloat },
               stock: { type: GraphQLInt },
               brand: { type: GraphQLString },
               category: { type: GraphQLString },
               thumbnail: { type: GraphQLString },
-              images: { type: GraphQLList(GraphQLString) },
+              images: { type: new GraphQLList(GraphQLString) },
             },
             resolve(source, args) {
               const index = productsData.findIndex(product => product.id === args.id);
@@ -74,7 +74,7 @@ const productMutation = new GraphQLObjectType({
         deleteProduct: {
             type: GraphQLString,
             args: {
-              id: { type: GraphQLNonNull(GraphQLInt) },
+              id: { type: new GraphQLNonNull(GraphQLInt) },
             },
             resolve(source, args) {
                 console.log('sourse', source)
