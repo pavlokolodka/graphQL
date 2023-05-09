@@ -77,7 +77,6 @@ const productMutation = new GraphQLObjectType({
               id: { type: new GraphQLNonNull(GraphQLInt) },
             },
             resolve(source, args) {
-                console.log('sourse', source)
               const index = productsData.findIndex(product => product.id === args.id);
               if (index !== -1) {
                 productsData.splice(index, 1);

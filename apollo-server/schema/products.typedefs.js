@@ -1,16 +1,49 @@
 module.exports = typeDefs = `#graphql
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
-
-  # This "Book" type defines the queryable fields for every book in our data source.
-  type Book {
-    title: String
-    author: String
+  type Product {
+    id: Int!,
+    title: String!,
+    description: String,
+    price: Int!,
+    discountPercentage: Float,
+    rating: Float,
+    stock: Int,
+    brand: String,
+    category: String,
+    thumbnail: String,
+    images: [String],
   }
 
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. In this
-  # case, the "books" query returns an array of zero or more Books (defined above).
   type Query {
-    books: [Book]
+    products: [Product]
+    product(id: Int!): Product
+  }
+
+  type Mutation {
+    addProduct(
+        title: String!,
+        description: String,
+        price: Int!,
+        discountPercentage: Float,
+        rating: Float,
+        stock: Int,
+        brand: String,
+        category: String,
+        thumbnail: String,
+        images: [String]
+        ): Product
+    deleteProduct(id: Int!): String
+    updateProduct(
+        id: Int!
+        title: String!,
+        description: String,
+        price: Int!,
+        discountPercentage: Float,
+        rating: Float,
+        stock: Int,
+        brand: String,
+        category: String,
+        thumbnail: String,
+        images: [String]
+        ): Product
   }
 `;
