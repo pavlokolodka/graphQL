@@ -12,8 +12,9 @@ This project is designed to provide hands-on experience with GraphQL. It include
 
 This project is organized as follows:
 
-- `express-graphql`: The GraphQL server using Express.js and express-graphql package. ⚠️ Deperecated, use `graphql-http` instead.
-- `apollo-server`: The GraphQL server using Express.js and appolo-server package.
+- `express-graphql`: The GraphQL server using Express.js and express-graphql package with built-in UI. ⚠️ Deperecated, use `graphql-http` instead.
+- `graphql-http`: The GraphQL server using Express.js and graphql-http package.
+- `apollo-server`: The GraphQL server using Express.js and appolo-server package with built-in UI.
 - `products.json`: This file serves as a dummy database.
 
 

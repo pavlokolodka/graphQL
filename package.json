@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "express-graphql": "nodemon ./express-graphql/index.js",
-    "apollo-server": "nodemon ./apollo-server/index.js"
+    "apollo-server": "nodemon ./apollo-server/index.js",
+    "graphql-http": "nodemon ./graphql-http/index.js"
   },
   "author": "Pavlo Kolodka",
   "license": "ISC",
@@ -13,7 +14,8 @@
     "@apollo/server": "^4.7.1",
     "express": "^4.18.2",
     "express-graphql": "^0.12.0",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "graphql-http": "^1.18.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
